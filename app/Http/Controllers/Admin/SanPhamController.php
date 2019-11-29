@@ -29,6 +29,7 @@ class SanPhamController extends Controller
     public function postAddSanPham(AddSanphamRequest $request)
     {
         # code...
+        // return $input = $request->img->getClientOriginalName();
         $sanpham = new Sanpham;
         $sanpham->ten_sp = $request->name;
         $sanpham->slug_sp = str_slug($request->name);
