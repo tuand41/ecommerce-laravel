@@ -64,5 +64,5 @@
                 </div>
             </div>
         </div><!--/.row-->
-    </div>    <!--/.main-->
+    </div><!--/.main-->
 @stop

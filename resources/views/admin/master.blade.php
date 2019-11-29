@@ -68,6 +68,14 @@
                 </svg>
                 User
             </a></li>
+            <li><a href="{{ asset('admin/bill') }}">
+                <svg class="glyph stroked line-graph">
+                    <use xlink:href="#stroked-line-graph">
+
+                    </use>
+                </svg>
+                Hoá đơn
+            </a></li>
         <li role="presentation" class="divider"></li>
     </ul>
 </div>

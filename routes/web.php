@@ -69,5 +69,9 @@ Route::group(['namespace' => 'Admin'], function() {
 
             Route::get('delete/{id}','UserController@getDeleteUser');
         });
+
+        Route::group(['prefix' => 'bill'], function () {
+            Route::get('/','BillController@getBill');
+        });
     });
 });
