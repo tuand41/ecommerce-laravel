@@ -56,7 +56,6 @@ class CartController extends Controller
 
     public function datHang(CartRequest $request)
     {
-        # code...
         $hoadon = new Hoadon();
         $hoadon->email_bill = Auth::user()->email;
         $hoadon->hovaten = $request->name;
@@ -65,11 +64,9 @@ class CartController extends Controller
         $hoadon->totall = filter_var(Cart::total(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $hoadon->date_order = date('Y-m-d  H:i:s');
         $hoadon->note = $request->ghichu;
+        $hoadon->status = 0;
         $hoadon->save();
-
-
         foreach (Cart::content() as $cart) {
-//            $sanpham = Sanpham::find($cart->name);
             $sanpham = DB::table('sanpham')->where('ten_sp',$cart->name)->first();
             $chitiet = new ChitietHoadon();
             $chitiet->id_billfk = $hoadon->id_bill;
@@ -78,30 +75,7 @@ class CartController extends Controller
             $chitiet->price = $cart->price;
             $chitiet->save();
         }
-
-
-        Cart::destroy();
-        // // dd($data);
-        // //nhập database
-        // $giohang = new Giohang;
-        // $giohang->cart_tensp = $request->name;
-        // $giohang->cart_soluong = $request->qty;
-        // $giohang->cart_thanhtien = Cart::total();
-        // $giohang->cart_hoten = $request->Name;
-        // $giohang->cart_email = $request->email;
-        // $giohang->cart_sdt = $request->sdt;
-        // $giohang->cart_diachi = $request->address;
-        // $giohang->save();            
-
-        // $data['info'] = $request->all();
-        // $data['carts'] = Cart::content();
-        // $data['total'] = Cart::total();
-        // $email = $request->email;
-        // Mail::send('frontend.mail', $data, function ($message) use ($email) {
-        //     $message->from('vantuantk4@gmail.com', 'Tuấn Nguyễn');
-        //     $message->to($email,$email);           
-        //     $message->subject('Xác nhận mua hàng');    
-        // });
+        Cart::destroy();        
         return view('client.damuahang');
     }
 }

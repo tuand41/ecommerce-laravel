@@ -25,7 +25,7 @@ class CartRequest extends FormRequest
     {
         return [
             'name' => 'min:5|max:40',
-            'sdt' => 'size:10|numeric',
+            
             'address' => 'min:5|max:40',
             'ghichu' => 'max:40'
         ];

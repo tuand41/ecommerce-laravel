@@ -22,4 +22,8 @@ class Sanpham extends Model
         return $this->primaryKey;
     }
 
+    public function billdetail()
+    {
+        return $this->hasMany(ChitietHoadon::class,'id_sanpham');
+    }
 }

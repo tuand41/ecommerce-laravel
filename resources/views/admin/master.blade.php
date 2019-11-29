@@ -10,6 +10,7 @@
     <link href="css/styles.css" rel="stylesheet">
 
     <script type="text/javascript" src="../../editor/ckeditor/ckeditor.js"></script>
+    <script src="https://kit.fontawesome.com/4977667528.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -74,7 +75,7 @@
 
                     </use>
                 </svg>
-                Hoá đơn
+                Đơn hàng
             </a></li>
         <li role="presentation" class="divider"></li>
     </ul>
