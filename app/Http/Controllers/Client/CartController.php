@@ -5,13 +5,11 @@ namespace App\Http\Controllers\Client;
 use App\Http\Requests\CartRequest;
 use App\Models\ChitietHoadon;
 use App\Models\Hoadon;
-use App\User;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Cart;
 use App\Models\Sanpham;
-use App\Models\Giohang;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
