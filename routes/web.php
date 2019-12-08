@@ -69,5 +69,17 @@ Route::group(['namespace' => 'Admin'], function() {
 
             Route::get('delete/{id}','UserController@getDeleteUser');
         });
+
+        Route::group(['prefix' => 'post'], function () {
+            Route::get('/','PostController@index');
+
+            Route::get('add','PostController@create');
+            Route::post('add','PostController@store');
+
+            Route::get('edit/{id}','PostController@edit');
+            Route::post('edit/{id}','PostController@update');
+
+            Route::get('delete/{id}','PostController@destroy');
+        });
     });
 });

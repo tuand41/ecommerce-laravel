@@ -22,4 +22,9 @@ class Sanpham extends Model
         return $this->primaryKey;
     }
 
+    public function post()
+    {
+        return $this->hasMany('App\Post', 'product_id');
+    }
+
 }
