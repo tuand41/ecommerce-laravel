@@ -21,9 +21,10 @@
                                     <tr class="active">
                                         <td width="22.222%">Tên sản phẩm</td>
                                         <td width="11.111%">Ảnh mô tả</td>                                        
-                                        <td width="22.222%">Số lượng</td>
+                                        <td width="11.222%">Số lượng</td>
                                         <td width="16.6665%">Đơn giá</td>
                                         <td width="16.6665%">Thành tiền</td>
+                                        <td >tuỳ chọn</td>
                                     </tr>
                                     @foreach ($details as $dt)
                                     <tr>
@@ -37,11 +38,21 @@
                                         </td>
                                         <td style="vertical-align: middle;">{{ $dt->price }}</td>
                                         <td style="vertical-align: middle;">{{ number_format($dt->price * $dt->qty,0,',','.') }}</td>
+                                        <td style="padding-top: 3%">
+                                            <a href="" 
+                                                class="btn btn-warning"><span class="glyphicon glyphicon-edit "></span>
+                                                 Sửa</a>
+                                            <a href=""
+                                                onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
+                                                class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>
+                                                 Xóa</a>
+                                        </td>
                                     </tr>
                                     @endforeach
                     
                                 </table>							
-							</div>
+                            </div>
+                            
 						</div>
 						<div class="clearfix"></div>
 					</div>
