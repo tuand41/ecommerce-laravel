@@ -24,7 +24,7 @@
 											<th style="text-align: center;">Tên Bài viết</th>
 											<th>Hình ảnh</th>
 											<th>mô tả</th>
-											<th>Tùy chọn</th>
+											<th width="15%">Tùy chọn</th>
 										</tr>
 									</thead>
 									<tbody>									
@@ -35,7 +35,7 @@
 												<td>{{$p->description}}</td>
 												<td>
 												<a href="{{ asset('admin/post/edit/'.$p->id) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit "></span>
-													Sửa></a>
+													Sửa</a>
 												<a href="{{ asset('admin/post/delete/'.$p->id) }}"
 													onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
 													class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>
