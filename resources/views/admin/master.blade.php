@@ -10,6 +10,7 @@
     <link href="css/styles.css" rel="stylesheet">
 
     <script type="text/javascript" src="../../editor/ckeditor/ckeditor.js"></script>
+    <script src="https://kit.fontawesome.com/4977667528.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -77,6 +78,14 @@
             </svg>
             Bài viêt
         </a></li>
+            <li><a href="{{ asset('admin/bill') }}">
+                <svg class="glyph stroked line-graph">
+                    <use xlink:href="#stroked-line-graph">
+
+                    </use>
+                </svg>
+                Đơn hàng
+            </a></li>
         <li role="presentation" class="divider"></li>
     </ul>
 </div>

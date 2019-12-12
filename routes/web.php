@@ -81,5 +81,11 @@ Route::group(['namespace' => 'Admin'], function() {
 
             Route::get('delete/{id}','PostController@destroy');
         });
+        Route::group(['prefix' => 'bill'], function () {
+            Route::get('/','BillController@getBill');
+            Route::get('show/{id}','BillController@showBill');
+            Route::get('delete/{id}','BillController@deleteBill');
+            // Route::get('')
+        });
     });
 });

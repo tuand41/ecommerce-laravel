@@ -27,4 +27,8 @@ class Sanpham extends Model
         return $this->hasMany('App\Post', 'product_id');
     }
 
+    public function billdetail()
+    {
+        return $this->hasMany(ChitietHoadon::class,'id_sanpham');
+    }
 }
