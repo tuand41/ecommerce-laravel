@@ -24,7 +24,7 @@ class Sanpham extends Model
 
     public function post()
     {
-        return $this->hasMany('App\Post', 'product_id');
+        return $this->hasMany(Post::class, 'product_id');
     }
 
     public function billdetail()

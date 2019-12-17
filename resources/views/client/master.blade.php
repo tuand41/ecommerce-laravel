@@ -46,7 +46,7 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="{{ asset('/') }}">Giới Thiệu</a></li>
+                    <li><a href="{{ asset('/post') }}">Tin tức</a></li>
                     <li><a href="{{ asset('/') }}">Liên hệ</a></li>
                 </ul>
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\addTintucRequest;
+use App\Http\Requests\editTintucRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Sanpham;
 use App\Models\Post;
@@ -16,13 +18,14 @@ class PostController extends Controller
         return view('admin.post', compact('post'));
     }
 
+
     public function create()
     {
         $product = Sanpham::all();
         return view('admin.addpost', compact('product'));
     }
 
-    public function store(Request $request)
+    public function store(addTintucRequest $request)
     {
         $post = new Post;
         $post->name = $request->name;
@@ -43,16 +46,18 @@ class PostController extends Controller
         return view('admin.editpost', compact('post','product'));
     }
 
-    public function update(Request $request, $id)
+    public function update(editTintucRequest $request, $id)
     {
         $post = Post::find($id);
         $post->name = $request->name;
-        $post->description = $request->description;
-        $post->img = $request->img->getClientOriginalName();
+        $post->description = $request->description;        
         $post->content = $request->content;
-        $post->product_id = $request->product;
-        $post->save();
-        $request->img->storeAs('post', $request->img->getClientOriginalName());
+        $post->product_id = $request->product;               
+        if ($request->hasFile('img')) {
+            $post->img = $request->img->getClientOriginalName();
+            $request->img->storeAs('post', $request->img->getClientOriginalName());
+        }
+        $post->save(); 
         return redirect('admin/post');
     }
 

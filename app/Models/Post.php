@@ -10,6 +10,6 @@ class Post extends Model
 
     public function product()
     {
-        return $this->belongsTo('App\Sanpham','product_id');
+        return $this->belongsTo(Sanpham::class,'product_id');
     }
 }

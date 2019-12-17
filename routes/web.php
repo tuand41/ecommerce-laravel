@@ -11,11 +11,16 @@
 |   ,'middleware' => 'checkClient'
 */
 Route::group(['namespace' => 'Client','middleware' => 'checkClient'],function(){
-    Route::get('/','FrontendController@getHome');
+    Route::get('/','FrontendController@getHome')->name('root');
     Route::get('detail/{id}/{slug}.html','FrontendController@getDetail');
     Route::post('detail/{id}/{slug}.html','FrontendController@postCom');
     Route::get('danhmuc/{id}/{slug}.html','FrontendController@getDanhmuc');
     Route::get('search','FrontendController@getSearch');
+    // Route::get('tin-tuc','PostController@index');
+    Route::group(['prefix' => 'post'], function () {
+        Route::get('/','FrontendController@getPost');
+        Route::get('detail/{id}/{slug}.html','FrontendController@getDetailPost');
+    });
     Route::group(['prefix'=>'giohang'],function(){
         # code...
         Route::get('them/{id}','CartController@addCart');

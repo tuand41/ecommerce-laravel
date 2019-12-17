@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Sanpham;
 use App\Models\Danhmucsp;
 use App\Models\Comment;
+use App\Models\Post;
 use DB;
 use Auth;
 
@@ -62,5 +63,10 @@ class FrontendController extends Controller
         $data['sanpham'] = Sanpham::where('ten_sp','like','%'.$ketqua.'%')->paginate(8);
         return view('client.timkiem',$data);
         // dd($data['key']);        
+	}
+	public function getPost()
+	{
+		$post = Post::with('product')->orderBy('id','desc')->get();
+		return view('client.tintuc', compact('post'));
 	}
 }
