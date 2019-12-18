@@ -21,8 +21,8 @@
                         <fieldset>
                             {{ csrf_field() }}
                             <div class="form-group">
-                                <input class="form-control" placeholder="E-mail" value="{{old('emaildk')}}" name="emaildk"
-                                    type="email">
+                                <input class="form-control" placeholder="E-mail" value="{{old('emaildk')}}"
+                                    name="emaildk" type="email">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="Họ và tên" value="{{old('name')}}" name="name"
