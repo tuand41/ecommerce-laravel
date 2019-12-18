@@ -69,4 +69,27 @@ class FrontendController extends Controller
 		$post = Post::with('product')->orderBy('id','desc')->get();
 		return view('client.tintuc', compact('post'));
 	}
+
+	public function showPost($id)
+	{
+		# code...
+		$post = Post::find($id);
+        $comments = Comment::where(['com_sp' => $id, 'type' => 1])->orderBy('id_com','desc')->paginate(3);
+
+		return view('client.tintuc-chitiet',compact('post','comments'));
+		
+	}
+	
+	public function commentPost(Request $request,$id)
+    {
+    	# code...
+    	$comment = new Comment;    	
+    	$comment->com_email = Auth::user()->email;
+    	$comment->com_name = Auth::user()->name;
+    	$comment->com_noidung = $request->contents;
+		$comment->com_sp = $id;
+		$comment->type = 1;
+    	$comment->save();
+    	return back(); 	
+    }
 }

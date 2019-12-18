@@ -19,7 +19,8 @@ Route::group(['namespace' => 'Client','middleware' => 'checkClient'],function(){
     // Route::get('tin-tuc','PostController@index');
     Route::group(['prefix' => 'post'], function () {
         Route::get('/','FrontendController@getPost');
-        Route::get('detail/{id}/{slug}.html','FrontendController@getDetailPost');
+        Route::get('detail/{id}','FrontendController@showPost')->name('chi-tiet-bai-viet');
+        Route::post('detail/{id}','FrontendController@commentPost')->name('comment-bai-viet');
     });
     Route::group(['prefix'=>'giohang'],function(){
         # code...
