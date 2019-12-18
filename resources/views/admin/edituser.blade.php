@@ -17,13 +17,13 @@
                 </div>
                 @include('errors.note')
                 <div class="panel-body">
-                    
+
                     <form method="post" role="form">
                         <fieldset>
                             {{ csrf_field() }}
                             <div class="form-group">
-                                <input class="form-control" disabled value="{{ $user->email }}" placeholder="E-mail" name="email"
-                                    type="email">
+                                <input class="form-control" disabled value="{{ $user->email }}" placeholder="E-mail"
+                                    name="email" type="email">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" value="{{ $user->name }}" placeholder="Họ và tên"

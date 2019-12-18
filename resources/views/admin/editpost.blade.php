@@ -26,9 +26,9 @@
                                 <div class="form-group">
                                     <label>Ảnh bài viết</label>
                                     <input id="img" type="file" name="img" class="form-control hidden"
-                                           onchange="changeImg(this)">
+                                        onchange="changeImg(this)">
                                     <img id="avatar" class="thumbnail" width="300px"
-                                         src="{{ asset('storage/app/post/'.$post->img) }}">
+                                        src="{{ asset('storage/app/post/'.$post->img) }}">
                                 </div>
                                 <div class="form-group">
                                     <label>Mô tả</label>

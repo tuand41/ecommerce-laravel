@@ -41,7 +41,7 @@
 										<th style="vertical-align: middle;">{{ $b->date_order }}</th>
 										<th style="vertical-align: middle;">
 											@if ($b->status == 0)
-												<a href="#" class="badge badge-secondary">Chờ xử lý</a>
+												<a href="javascrip:void(0)" class="badge badge-secondary">Chờ xử lý</a>
 											@elseif ($b->status = 1)
 												<a href="#" class="badge badge-success">Đã xử lý</a>
 											@else

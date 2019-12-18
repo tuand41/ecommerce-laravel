@@ -6,7 +6,7 @@
         <li><a href="{{ route('root') }}">Home</a></li>
         <li class="active">Tin tuc</li>
     </ul>
-    <div style="margin: 0 15px" >
+    <div style="margin: 0 15px">
         <h1 style="text-align: justify; font-weight: 600">{{$post->name}}</h1>
         <div>
             <span style="font-size: 12px; color: #A69EBA;">
@@ -14,7 +14,7 @@
                 {{ date('d/m/Y H:i',strtotime($post->created_at)) }}</span>
         </div>
         <div>
-            {{$post->content}}
+            {!!$post->content!!}
         </div>
     </div>
     <hr>
@@ -24,7 +24,7 @@
         </div>
         <div class="panel-body">
             <div class="row">
-            <form method="post" action="{{ route('comment-bai-viet', $post->id) }}" class="col-md-12">
+                <form method="post" action="{{ route('comment-bai-viet', $post->id) }}" class="col-md-12">
                     {{ csrf_field() }}
                     <div class="form-group">
                         @if(Auth::check())

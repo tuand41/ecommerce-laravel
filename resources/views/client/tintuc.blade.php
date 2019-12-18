@@ -21,7 +21,7 @@
             </div>
             <div class="new-des">
                 <p>
-                    {{ $p->content }}
+                    {{ $p->description }}
                 </p>
             </div>
             <div class="new-meta">
@@ -30,6 +30,7 @@
                 </span>
                 <span class="author">| Post by Admin</span>
             </div>
+            
         </div>
     </div>
     <hr>

@@ -103,7 +103,7 @@
             <div class="chitietsp" style="margin-top: 30px">
                 <h3>Chi tiết sản phẩm</h3>
                 </p>
-                <div class="chitietspNd text-justify" style="height: 500px; overflow: hidden">
+                <div class="chitietspNd text-justify">
                     {!! $sanpham1->mieuta !!}
                 </div>
             </div>
