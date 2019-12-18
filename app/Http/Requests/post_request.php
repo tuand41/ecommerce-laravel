@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class add_post_request extends FormRequest
+class post_request extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +24,18 @@ class add_post_request extends FormRequest
     public function rules()
     {
         return [
-            'img' => 'image'
+            'img' => 'image',
+            'name'=>'required|min:20'
         ];
     }
 
     public function messages()
     {
         return [
-            'img.image' => 'hình ảnh ko hợp lệ'
+            'img.image' => 'hình ảnh ko hợp lệ',
+            'img.required' => 'Bạn phải thêm hình ảnh',
+            'name.required'=> 'Bạn phải nhập tiêu đê',
+            'name.min'=> 'Tên phải tối thiểu 20 từ',
         ];
     }
 }

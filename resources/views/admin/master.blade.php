@@ -10,7 +10,7 @@
     <link href="css/styles.css" rel="stylesheet">
 
     <script type="text/javascript" src="../../editor/ckeditor/ckeditor.js"></script>
-    <script src="https://kit.fontawesome.com/4977667528.js" crossorigin="anonymous"></script>
+    <script src="4977667528.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

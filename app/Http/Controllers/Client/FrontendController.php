@@ -74,7 +74,7 @@ class FrontendController extends Controller
 	{
 		# code...
 		$post = Post::find($id);
-        $comments = Comment::where(['com_sp' => $id, 'type' => 1])->orderBy('id_com','desc')->paginate(3);
+        $comments = Comment::where(['post_id' => $id, 'type' => 1])->orderBy('id_com','desc')->paginate(3);
 
 		return view('client.tintuc-chitiet',compact('post','comments'));
 		
@@ -83,11 +83,12 @@ class FrontendController extends Controller
 	public function commentPost(Request $request,$id)
     {
     	# code...
-    	$comment = new Comment;    	
+    	$comment = new Comment; 	
     	$comment->com_email = Auth::user()->email;
     	$comment->com_name = Auth::user()->name;
     	$comment->com_noidung = $request->contents;
-		$comment->com_sp = $id;
+		$comment->post_id = $id;
+		// $comment->com
 		$comment->type = 1;
     	$comment->save();
     	return back(); 	

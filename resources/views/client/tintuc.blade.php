@@ -11,7 +11,7 @@
     <div class="content-new row">
         <div class="img-box col-md-4">
             <a href="{{ route('chi-tiet-bai-viet', $p->id)}}">
-                <img src="{{ asset('storage/app/post/'.$p->img) }}" height="170" alt="">
+                <img src="{{ asset('storage/app/post/'.$p->img) }}" width="100%" alt="">
             </a>
         </div>
         <div class="content-box col-md-8">

@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\addTintucRequest;
-use App\Http\Requests\editTintucRequest;
+use App\Http\Requests\post_request;
 use App\Http\Controllers\Controller;
 use App\Models\Sanpham;
 use App\Models\Post;
@@ -25,7 +24,7 @@ class PostController extends Controller
         return view('admin.addpost', compact('product'));
     }
 
-    public function store(addTintucRequest $request)
+    public function store(post_request $request)
     {
         $post = new Post;
         $post->name = $request->name;
@@ -35,7 +34,7 @@ class PostController extends Controller
         $post->product_id = $request->product;
         $post->save();
         $request->img->storeAs('post', $request->img->getClientOriginalName());
-        return redirect('admin/post');
+        return redirect('admin/post')->with('success','Thêm bài viết thành công');
     }
 
     public function edit($id)
@@ -46,7 +45,7 @@ class PostController extends Controller
         return view('admin.editpost', compact('post','product'));
     }
 
-    public function update(editTintucRequest $request, $id)
+    public function update(post_request $request, $id)
     {
         $post = Post::find($id);
         $post->name = $request->name;
@@ -58,12 +57,12 @@ class PostController extends Controller
             $request->img->storeAs('post', $request->img->getClientOriginalName());
         }
         $post->save(); 
-        return redirect('admin/post');
+        return redirect('admin/post')->with('success','Thay đổi bài viết thành công');
     }
 
     public function destroy($id)
     {
         Post::destroy($id);
-        return redirect('admin/post');
+        return redirect('admin/post')->with('success','xoá bài viết thành công');
     }
 }

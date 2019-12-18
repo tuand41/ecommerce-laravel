@@ -25,8 +25,8 @@ class dangkiRequest extends FormRequest
     {
         return [
             'emaildk'=>'unique:vp_users,email|required|email',
-            'passwordk' => 'required|min:5|max:15',
-            'repasswordk'=>'required|same:passwordk',
+            'passwordk' => 'required|same:repasswordk|min:5|max:15',
+            'repasswordk'=>'required|same:passwordk|min:5|max:15',
             'name'=> 'required|min:3|max:25',
         ];
     }
@@ -41,6 +41,7 @@ class dangkiRequest extends FormRequest
             'passwordk.required' => 'Mật khẩu là trường bắt buộc.',
             'passwordk.min' => 'Mật khẩu phải chứa ít nhất 5 ký tự.',
             'passwordk.max'=>'mật khẩu ko quá 15 ký tự.',
+            'passwordk.same'=>'Mật khẩu không giống nhau',
             'repasswordk.same'=>'Mật khẩu không giống nhau',
             'name.required'=>'Họ tên là trường bắt buộc.',
             'name.min' => 'Họ tên phải chứa ít nhất 3 ký tự.',

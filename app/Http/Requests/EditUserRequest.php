@@ -25,8 +25,8 @@ class EditUserRequest extends FormRequest
     {
         return [
             'email'=>'unique:vp_users,email,'.$this->segment(4).',id',
-            'password' => 'min:5|max:15',
-            'repassword'=>'same:password',
+            'password' => 'same:repassword|min:5|max:15',
+            'repassword'=>'same:password|min:5|max:15',
             'name'=> 'required|min:3|max:25',
         ];
     }
@@ -40,7 +40,10 @@ class EditUserRequest extends FormRequest
             'password.required' => 'Mật khẩu là trường bắt buộc.',
             'password.min' => 'Mật khẩu phải chứa ít nhất 5 ký tự.',
             'password.max'=>'mật khẩu ko quá 15 ký tự.',
+            'password.same' => 'Mật khẩu không giống nhau',
             'repassword.same'=>'Mật khẩu không giống nhau',
+            'repassword.min' => 'Mật khẩu phải chứa ít nhất 5 ký tự.',
+            'repassword.max'=>'mật khẩu ko quá 15 ký tự.',
             'name.required'=>'Họ tên là trường bắt buộc.',
             'name.min' => 'Họ tên phải chứa ít nhất 3 ký tự.',
             'name.max'=>'Họ tên ko quá 25 ký tự.',

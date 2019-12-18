@@ -36,19 +36,19 @@ class UserController extends Controller
     public function postEditUser(EditUserRequest $request, $id)
     {
         $user = User::find($id);
-        $user->email = $request->email;
+        // $user->email = $request->email;
         $user->name = $request->name;
         if (($request->password) <> null) {
             $user->password = $request->password;
         }
         $user->save();
-        return redirect('admin/user')->with('successright','Thay đổi user thành công');
+        return redirect('admin/user')->with('success','Thay đổi user thành công');
     }
 
     public function getDeleteUser($id)
     {
         User::destroy($id);
         return back()
-            ->with('successright','Thay đổi user thành công');
+            ->with('success','Xoá user thành công');
     }
 }

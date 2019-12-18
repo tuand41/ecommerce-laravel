@@ -24,12 +24,12 @@
         </div>
         <div class="panel-body">
             <div class="row">
-            <form method="post" action="{{ route('comment-bai-viet', $post->product_id) }}" class="col-md-12">
+            <form method="post" action="{{ route('comment-bai-viet', $post->id) }}" class="col-md-12">
                     {{ csrf_field() }}
                     <div class="form-group">
                         @if(Auth::check())
                         <label>Bình luận:</label>
-                        <textarea required rows="5" class="form-control" name="contents"></textarea>
+                        <textarea required rows="4" class="form-control" name="contents"></textarea>
                         <input type="submit" name="submit" value="Gửi" class="form-control btn btn-primary">
                         @else
                         <h2>bạn phải đăng nhập</h2>
