@@ -26,13 +26,12 @@ class FrontendController extends Controller
     public function getDetail($id)
     {
     	# code...
-        $data['comments'] = Comment::where('com_sp',$id)->orderBy('id_com','desc')->paginate(3);
+        $data['comments'] = Comment::where(['com_sp' => $id, 'type' => 0])->orderBy('id_com','desc')->paginate(3);
     	$data['sanpham1'] = Sanpham::find($id);
     	$data['danhmuc1'] = DB::table('danhmucsp')
             ->join('sanpham','danhmucsp.id_danhmuc','=','sanpham.sp_danhmuc')
             ->where('sanpham.id_sp','=',Sanpham::find($id)->id_sp)->first();
 		return view('client.detail',$data);
-		// dd($data['sanpham1']);
     }
     public function postCom(Request $request,$id)
     {
@@ -41,7 +40,8 @@ class FrontendController extends Controller
     	$comment->com_email = Auth::user()->email;
     	$comment->com_name = Auth::user()->name;
     	$comment->com_noidung = $request->contents;
-    	$comment->com_sp = $id;
+		$comment->com_sp = $id;
+		$comment->type = 0;
     	$comment->save();
     	return back(); 	
     }

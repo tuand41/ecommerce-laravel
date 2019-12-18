@@ -23,9 +23,7 @@ class BillController extends Controller
 
     public function showBill($id)
     {
-        // $details = DB::table('chitiethoadon')->join('hoadon','chitiethoa')
         $details = ChitietHoadon::with('product')->where('id_billfk',$id)->get();
         return view('admin.showbill',compact('details'));
-        // dd($details);
     }
 }

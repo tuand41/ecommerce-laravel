@@ -13,7 +13,7 @@
 					<div class="col-sm-6 col-md-3">
 						<div class="thumbnail">
 							<a href="{{ asset('detail/'.$dt->id_sp.'/'.$dt->slug_sp.'.html') }}">
-								<img src="{{ asset('storage/app/avatar/'.$dt->img_sp) }}" alt="..." width="100%"></a>
+								<img src="{{ asset('storage/app/avatar/'.$dt->img_sp) }}" width="100%" alt="..." width="100%"></a>
 							<div class="caption ">
 								<h5>{{ $dt->ten_sp }}</h5>
 								<p>Giá: {{ number_format($dt->gia_sp,0,',','.') }} đ</p>

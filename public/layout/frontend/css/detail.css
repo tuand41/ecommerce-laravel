@@ -1,0 +1,36 @@
+.content-new{
+    
+}
+
+.new-title{
+    margin: 4px 0;
+}
+
+.new-title a{
+    text-decoration: none;
+    font-size: 17px;
+    color: black;
+}
+
+.new-sub-title{margin: 4px 0;}
+.new-sub-title span{
+    font-size: 11px;
+    color: #A69EBA;
+}
+.new-des p{
+    text-align: justify;
+}
+
+.new-meta{
+    margin: 4px 0;
+}
+
+span.cm-count{
+    font-size: 11px;
+    color: red;
+}
+
+span.author{
+    font-size: 12px;
+    color: #A69EBA;
+}

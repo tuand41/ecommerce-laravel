@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddImgDescriptionColumnToPostsTable extends Migration
+class AddTypeColumnTableComment extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddImgDescriptionColumnToPostsTable extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->string('img');
-            $table->string('description');
+        Schema::table('comment', function (Blueprint $table) {
+            $table->string('type')->after('com_noidung');
         });
     }
 
@@ -26,8 +25,8 @@ class AddImgDescriptionColumnToPostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            
+        Schema::table('comment', function (Blueprint $table) {
+            $table->string('type')->after('com_noidung');
         });
     }
 }
