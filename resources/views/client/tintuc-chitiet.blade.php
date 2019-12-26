@@ -42,7 +42,6 @@
             <div class="row">
                 <div class="comment" style="margin-left: 15px">
                     @foreach ($comments as $com)
-                    {{-- expr --}}
                     <div class="media">
                         <div class="media-left me">
                             <img src="images/img_avatar1.png" class="media-object" style="width:60px">
